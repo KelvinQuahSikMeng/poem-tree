@@ -2,6 +2,18 @@ from turtle import *
 from random import *
 from math import *
 tracer(0)
+def move(p):
+    pu(),goto(p),pd()
+
+def drop_flower(x1,y1,x2,y2,cnt = 100):
+    for i in range(cnt):
+        tx = uniform(x1,x2)
+        ty = uniform(y1,y2)
+        x = tx / 4 + 0.5
+        x = abs(x)
+        pencolor('black')
+        move((tx,ty))
+        circle(2)
 def tree(w,l,min):
     pencolor("black")
     pd()
@@ -90,10 +102,12 @@ pd()
 tree(12,100,0)
 fd(100)
 mid(10,85,5)
-
+drop_flower(-400,-300,200,150,200)
+move((200,250))
+pencolor("black")
+write("Carpe florem, carpe diem.\nI whispered to the tiny flower,\n\"Send us a message,\nlittle flower of love.\nFor like a dove,\
+    \nI sing out your love.\"",font = ("consolas",10,"normal"))
 ht()
 update()
 done()
-
-
 
